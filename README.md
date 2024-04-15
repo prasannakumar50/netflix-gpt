@@ -9,6 +9,9 @@
  - use Ref Hook
  - Fire base Setup
  - Deploying our app to production
+ - create SignUp user account
+ - Implement Sign In user api
+ - Created Redux store using UserSlice
 
 
 # Features
