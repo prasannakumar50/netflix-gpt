@@ -4,7 +4,7 @@ import { useState } from 'react'
 import {checkValidData} from '../utils/validate'
 import { createUserWithEmailAndPassword , signInWithEmailAndPassword, updateProfile} from "firebase/auth";
 import { auth } from '../utils/firebase';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
 
@@ -85,11 +85,7 @@ const Login = () => {
        setIsSignInForm(!isSignInForm)
   }
 
-  const signUpMessage = (
-    <p className="text-white text-sm mt-2">
-      Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime.
-    </p>
-  );
+ 
   return (
     <div>
      <Header />
@@ -110,8 +106,11 @@ const Login = () => {
       <p className='font-bold text-red-600 text-l'>{errorMessage}</p>
         <button className='p-2 my-2 bg-red-600 w-full rounded-lg' onClick={handleButtonClick}>{isSignInForm ? "Sign In" : "Sign Up"} </button>
 
-        <div className='my-4 cursor-pointer'  onClick={toggleSignInForm}>{isSignInForm ? "New to NetFlix? Sign Up" : "Already Registered? Sign In"}  Now.</div>
-        {!isSignInForm && signUpMessage}
+        
+        <div className='my-4 cursor-pointer'>
+          {isSignInForm ? "New to Netflix? " : "Already Registered? "}
+          <Link to="/signup" className="text-white font-bold hover:underline">Sign Up Now</Link> {/* Use Link to navigate */}
+        </div>
       </form>
   
     </div>
