@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import {addUser, removeUser} from "../utils/userSlice"
 import appStore from '../utils/appStore';
 import { Provider } from 'react-redux';
+import SignUpPage from './SignUpPage';
 
 const Body = () => {
   const dispatch =useDispatch();
@@ -23,7 +24,11 @@ const Body = () => {
     {
         path: "/browse",
         element: <Browse/>
-    }
+    },
+    {
+      path: "/signup",
+      element: <SignUpPage/>
+  }
  ])
 
  useEffect(()=>{

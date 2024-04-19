@@ -84,11 +84,17 @@ const Login = () => {
   const toggleSignInForm =()=>{
        setIsSignInForm(!isSignInForm)
   }
+
+  const signUpMessage = (
+    <p className="text-white text-sm mt-2">
+      Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime.
+    </p>
+  );
   return (
     <div>
      <Header />
      <div className="absolute">
-     <img src="https://assets.nflxext.com/ffe/siteui/vlv3/9d3533b2-0e2b-40b2-95e0-ecd7979cc88b/a3873901-5b7c-46eb-b9fa-12fea5197bd3/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_medium.jpg" 
+     <img src="https://assets.nflxext.com/ffe/siteui/vlv3/9f46b569-aff7-4975-9b8e-3212e4637f16/82d5fa1d-52d6-4a74-a58f-38ef1316db1c/PL-en-20240415-popsignuptwoweeks-perspective_alpha_website_large.jpg" 
      alt = "logo"/>
      </div>
      <form  
@@ -105,6 +111,7 @@ const Login = () => {
         <button className='p-2 my-2 bg-red-600 w-full rounded-lg' onClick={handleButtonClick}>{isSignInForm ? "Sign In" : "Sign Up"} </button>
 
         <div className='my-4 cursor-pointer'  onClick={toggleSignInForm}>{isSignInForm ? "New to NetFlix? Sign Up" : "Already Registered? Sign In"}  Now.</div>
+        {!isSignInForm && signUpMessage}
       </form>
   
     </div>
