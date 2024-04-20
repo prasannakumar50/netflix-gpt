@@ -11,6 +11,8 @@ import {addUser, removeUser} from "../utils/userSlice"
 import appStore from '../utils/appStore';
 import { Provider } from 'react-redux';
 import SignUpPage from './SignUpPage';
+import SignIn from './SingIn';
+import SignUpForm from './SignUpForm';
 
 const Body = () => {
   const dispatch =useDispatch();
@@ -28,7 +30,15 @@ const Body = () => {
     {
       path: "/signup",
       element: <SignUpPage/>
-  }
+    },
+    {
+      path: "/signin",
+      element: <SignIn/>
+    },
+    {
+      path: "/signupform",
+      element: <SignUpForm/>
+    }
  ])
 
  useEffect(()=>{
