@@ -29,7 +29,7 @@ const Login = ({ isSignUp }) => {
           }).then(() => {
             const { uid, email, displayName } = auth.currentUser;
             dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
-            navigate("/browse");
+            
           }).catch((error) => {
             setErrorMessage(error.message);
           });
@@ -41,7 +41,7 @@ const Login = ({ isSignUp }) => {
       signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
         .then((userCredential) => {
           const user = userCredential.user;
-          navigate("/browse");
+          
         })
         .catch((error) => {
           setErrorMessage(error.message);

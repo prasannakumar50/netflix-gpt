@@ -13,6 +13,8 @@
  - Implement Sign In user api
  - Created Redux store using UserSlice
  - Implemented Sign out
+ - Update Profile
+ - BugFix: Sign up user displayName
 
 
 # Features
