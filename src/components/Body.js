@@ -36,8 +36,8 @@ const Body = () => {
       element: <SignIn/>
     },
     {
-      path: "/signupform",
-      element: <SignUpForm/>
+      path: "/signup-form",
+      element: <SignUpForm />
     }
  ])
 

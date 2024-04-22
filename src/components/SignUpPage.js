@@ -27,7 +27,10 @@ const SignUpPage = () => {
         <p className='text-white text-2xl  p-1 m-1'>Ready to watch? Enter your email to create or restart your membership.</p>
         <div className='flex mt-8' >
           <input type="text" placeholder="Email address" className="p-3 my-2 w-3/5 bg-black bg-opacity-80 text-white  font-bold placeholder-opacity-75 placeholder-white border border-gray-500 rounded-md" />
-          <input type="text" placeholder="Get Started >" className="p-3 my-2 w-2/5  ml-3 bg-red-800 text-xl text-white  placeholder-opacity-75 placeholder-white font-bold border border-gray-500 rounded-md" onClick={handleSignInClick}/>
+          
+          
+
+          <Link to="/signup-form" className="p-3 my-2 w-2/5 ml-3 bg-red-800 text-xl text-white font-bold placeholder-opacity-75 placeholder-white border border-gray-500 rounded-md">Get Started ></Link>
         </div>
         
         {/* Conditionally render the sign-in form */}
