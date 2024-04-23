@@ -15,6 +15,8 @@
  - Implemented Sign out
  - Update Profile
  - BugFix: Sign up user displayName
+ - Register TMDB Api & create app and get access token
+ - Get data for TMDB now playing movies list Api
 
 
 # Features

@@ -6,6 +6,7 @@ import { auth } from '../utils/firebase';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { LOGO } from '../constants';
 
 const Login = ({ isSignUp }) => {
   const [errorMessage, setErrorMessage] = useState(null);
@@ -41,7 +42,7 @@ const Login = ({ isSignUp }) => {
       signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
         .then((userCredential) => {
           const user = userCredential.user;
-          
+         
         })
         .catch((error) => {
           setErrorMessage(error.message);
@@ -53,7 +54,7 @@ const Login = ({ isSignUp }) => {
     <div>
       <Header />
       <div className="absolute">
-        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/9f46b569-aff7-4975-9b8e-3212e4637f16/82d5fa1d-52d6-4a74-a58f-38ef1316db1c/PL-en-20240415-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+        <img src={LOGO}
           alt="logo" />
       </div>
       <form
