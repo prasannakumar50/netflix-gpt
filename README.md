@@ -17,7 +17,15 @@
  - BugFix: Sign up user displayName
  - Register TMDB Api & create app and get access token
  - Get data for TMDB now playing movies list Api
-
+ - Custom hook for now playing movies
+ - Create movieSlice
+ - Update Store with movies Data
+ - Planning for main container & secondary container
+ - Fetch data for Trailer Video
+ - Update store with Trailer video
+ - Embeded Youtube video & make it  autoplay and mute
+ - Added Tailwind Classes to make Main Container look awesome
+ 
 
 # Features
 - Login/Sign up
