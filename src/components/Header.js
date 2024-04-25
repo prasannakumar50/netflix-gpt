@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
-import { USER_AVATAR } from "../constants";
+import { USER_AVATAR } from "../utils/constants";
 
 const Header = ({  showButtons , handleSignInClick })=>{
     const navigate = useNavigate();

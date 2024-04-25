@@ -6,7 +6,7 @@ import { auth } from '../utils/firebase';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
-import { LOGO } from '../constants';
+import { LOGO } from '../utils/constants';
 
 const Login = ({ isSignUp }) => {
   const [errorMessage, setErrorMessage] = useState(null);
