@@ -6,11 +6,13 @@ import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
 import { SUPPORTED_LANGUAGES, USER_AVATAR } from "../utils/constants";
 import { toggleGptSearchView } from "../hooks/gptSlice";
+import { changeLanguage } from "../utils/configSlice";
 
 const Header = ({  showButtons , handleSignInClick })=>{
     const navigate = useNavigate();
     const dispatch =useDispatch();
     const user = useSelector(store=>store.user)
+    const showGptSearch = useSelector((store)=>store.gpt.showGptSearch)
 
     const handleSignInClick1 = () => {
         navigate('/signin'); // Navigate to the sign-in page
@@ -51,6 +53,12 @@ const Header = ({  showButtons , handleSignInClick })=>{
           dispatch(toggleGptSearchView());
       }
 
+      const handleLanguageChange = (e)=>{
+
+        dispatch(changeLanguage(e.target.value))
+
+      }
+
 
 
     
@@ -69,13 +77,13 @@ const Header = ({  showButtons , handleSignInClick })=>{
 
         {user && (<div className="flex  h-14  p-2 ">
           <div>
-            <select className="p-2 m-2 bg-gray-900 text-white">
-            {SUPPORTED_LANGUAGES.map((lang)=> (
-              <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>
-            ))}
-         
-            </select>
-            <button className=" py-2 px-2 mx-4 bg-purple-800 rounded-lg  text-white" onClick={handleGptSearchClick}>GPT Search</button>
+          {showGptSearch && (<select className="p-2 m-2 bg-gray-900 text-white " onChange={handleLanguageChange} >
+          {SUPPORTED_LANGUAGES.map((lang)=> (
+            <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>
+          ))}
+        
+          </select>)}
+            <button className=" py-2 px-2 mx-4 bg-purple-800 rounded-lg  text-white" onClick={handleGptSearchClick}>{showGptSearch ? "Homepage" : "GPT Search"}</button>
              
             </div>
             <img  className=" w-14" alt="user-icon" src={USER_AVATAR}/>
