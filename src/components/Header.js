@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
-import { USER_AVATAR } from "../utils/constants";
+import { SUPPORTED_LANGUAGES, USER_AVATAR } from "../utils/constants";
 import { toggleGptSearchView } from "../hooks/gptSlice";
 
 const Header = ({  showButtons , handleSignInClick })=>{
@@ -69,6 +69,12 @@ const Header = ({  showButtons , handleSignInClick })=>{
 
         {user && (<div className="flex  h-14  p-2 ">
           <div>
+            <select className="p-2 m-2 bg-gray-900 text-white">
+            {SUPPORTED_LANGUAGES.map((lang)=> (
+              <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>
+            ))}
+         
+            </select>
             <button className=" py-2 px-2 mx-4 bg-purple-800 rounded-lg  text-white" onClick={handleGptSearchClick}>GPT Search</button>
              
             </div>
